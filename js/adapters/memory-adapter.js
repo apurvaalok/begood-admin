@@ -1,5 +1,17 @@
 app.adapters.activity = (function () {
 
+	activities = [
+            {"id": 1, "type": "Cart Create", "time": "2014-03-09 14:34:52", "title": "New cart creation"},
+            {"id": 2, "type": "Order Payment", "time": "2014-03-08 4:16:12", "title": "Sheryl Just Placed an order"},
+            {"id": 3, "type": "Customer Update", "time": "2014-03-08 12:39:42", "title": "John Doe Signed Up"}
+        ];
+        
+       
+    
+    window.localStorage.setItem("activities", activities);
+
+
+	console.log(activities);
     var findById = function (id) {
             var deferred = $.Deferred();
             var activity = null;
@@ -35,12 +47,7 @@ app.adapters.activity = (function () {
         },
 
 		//activities = app._activities;
-		activities = [
-
-            {"id": 1, "type": "Cart Create", "time": "2014-03-09 14:34:52", "title": "New cart creation"},
-            {"id": 2, "type": "Order Payment", "time": "2014-03-08 4:16:12", "title": "Sheryl Just Placed an order"},
-            {"id": 3, "type": "Customer Update", "time": "2014-03-08 12:39:42", "title": "John Doe Signed Up"},
-        ];
+		
         
 
     // The public API
