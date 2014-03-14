@@ -39,8 +39,9 @@ $(document).on("ready", function () {
 			}
 	}); */ 
 	app.utils.templates.load(["HomeView", "ActivityView", "ActivityListItemView"],
-					function () {
-						app.router = new app.routers.AppRouter();
-						Backbone.history.start();
-					});
+		function () {
+			app.router = new app.routers.AppRouter();
+			Backbone.history.start();
+			$('.scroller', this.el).append('activities');
+	});
 });
