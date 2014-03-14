@@ -2,7 +2,7 @@ app.routers.AppRouter = Backbone.Router.extend({
 
     routes: {
         "":                        "home",
-        "products/:id":            "productDetails",
+        "products/:id":            "activityDetails",
     },
 
     initialize: function () {
@@ -22,13 +22,13 @@ app.routers.AppRouter = Backbone.Router.extend({
         app.slider.slidePage(app.homeView.$el);
     },
 
-    productDetails: function (id) {
-        var product = new app.models.Product({id: id});
-        product.fetch({
+    activityDetails: function (id) {
+        var product = new app.models.Activity({id: id});
+        activity.fetch({
             success: function (data) {
-                // Note that we could also 'recycle' the same instance of EmployeeFullView
+                // Note that we could also 'recycle' the same instance of ActivityFullView
                 // instead of creating new instances
-                app.slider.slidePage(new app.views.ProductView({model: data}).render().$el);
+                app.slider.slidePage(new app.views.ActivityView({model: data}).render().$el);
             }
         });
     }

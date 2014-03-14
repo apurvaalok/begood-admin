@@ -1,0 +1,27 @@
+<div class="topcoat-navigation-bar">
+    <div class="topcoat-navigation-bar__item left quarter">
+        <a class="topcoat-icon-button--quiet back-button" href="#">
+          <span class="topcoat-icon topcoat-icon--back"></span>
+        </a>
+    </div>
+    <div class="topcoat-navigation-bar__item center half">
+        <h1 class="topcoat-navigation-bar__title">Activity</h1>
+    </div>
+</div>
+
+<div class='details'>
+    <img class='activity-image' src='<%= image %>'/>
+    <h1><%= type %></h1>
+    <h2><%= title %></h2>
+    <h2><%= time %></h2>
+    
+    <div class="topcoat-list__container scroller">
+        <ul class="topcoat-list list actions">
+        	<% if (type) { %>
+            <li class="topcoat-list__item"><a href="#activities/<%= type %>"><p>View Type</p><p><%= type %></p><div class="action-icon icon-manager"/></a></li>
+            <% } %>
+           
+            <li class="topcoat-list__item"><a href="javascript:void(0);"><p>Option</p><div class="action-icon icon-sms"/></a></li>
+    </div>
+</div>
+        

@@ -1,4 +1,4 @@
-app.views.ProductListView = Backbone.View.extend({
+app.views.ActivityListView = Backbone.View.extend({
 
     tagName:'ul',
 
@@ -8,20 +8,20 @@ app.views.ProductListView = Backbone.View.extend({
         var self = this;
         this.model.on("reset", this.render, this);
         this.model.on("add", function (product) {
-            self.$el.append(new app.views.ProductListItemView({model:product}).render().el);
+            self.$el.append(new app.views.ActivityListItemView({model:activity}).render().el);
         });
     },
 
     render:function () {
         this.$el.empty();
-        _.each(this.model.models, function (product) {
-            this.$el.append(new app.views.ProductListItemView({model:product}).render().el);
+        _.each(this.model.models, function (activity) {
+            this.$el.append(new app.views.ActivityListItemView({model:activity}).render().el);
         }, this);
         return this;
     }
 });
 
-app.views.ProductListItemView = Backbone.View.extend({
+app.views.ActivityListItemView = Backbone.View.extend({
 
     tagName:"li",
 

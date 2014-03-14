@@ -1,8 +1,8 @@
 app.views.HomeView = Backbone.View.extend({
 
     initialize: function () {
-        this.searchResults = new app.models.ProductCollection();
-        this.searchresultsView = new app.views.ProductListView({model: this.searchResults});
+        this.searchResults = new app.models.ActivityCollection();
+        this.searchresultsView = new app.views.ActivityListView({model: this.searchResults});
     },
 
     render: function () {
